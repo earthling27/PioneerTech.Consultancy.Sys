@@ -75,6 +75,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ProjectDetailsTab = new System.Windows.Forms.TabPage();
+            this.employeeIDTextBox = new System.Windows.Forms.TextBox();
+            this.employeeIDlabel = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -86,6 +88,10 @@
             this.ClientNameTextBox = new System.Windows.Forms.TextBox();
             this.projectNameTextBox = new System.Windows.Forms.TextBox();
             this.CompanyDetailsTab1 = new System.Windows.Forms.TabPage();
+            this.website_companyDetails_textBox = new System.Windows.Forms.TextBox();
+            this.website_companyDetails_label = new System.Windows.Forms.Label();
+            this.employeeID_companyDetails_textBox = new System.Windows.Forms.TextBox();
+            this.employeeID_companyDetails_label = new System.Windows.Forms.Label();
             this.location_companyDetails_textBox = new System.Windows.Forms.TextBox();
             this.contact_companyDetails_textbox = new System.Windows.Forms.TextBox();
             this.employeeName_companyDetails_textBox = new System.Windows.Forms.TextBox();
@@ -106,12 +112,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.employeeIDlabel = new System.Windows.Forms.Label();
-            this.employeeIDTextBox = new System.Windows.Forms.TextBox();
-            this.employeeID_companyDetails_label = new System.Windows.Forms.Label();
-            this.employeeID_companyDetails_textBox = new System.Windows.Forms.TextBox();
-            this.website_companyDetails_label = new System.Windows.Forms.Label();
-            this.website_companyDetails_textBox = new System.Windows.Forms.TextBox();
             this.DashboardTab.SuspendLayout();
             this.EmployeeDetailsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -610,6 +610,23 @@
             this.ProjectDetailsTab.TabIndex = 1;
             this.ProjectDetailsTab.Text = "Project Details";
             // 
+            // employeeIDTextBox
+            // 
+            this.employeeIDTextBox.Location = new System.Drawing.Point(152, 197);
+            this.employeeIDTextBox.Name = "employeeIDTextBox";
+            this.employeeIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.employeeIDTextBox.TabIndex = 11;
+            this.employeeIDTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // employeeIDlabel
+            // 
+            this.employeeIDlabel.AutoSize = true;
+            this.employeeIDlabel.Location = new System.Drawing.Point(57, 200);
+            this.employeeIDlabel.Name = "employeeIDlabel";
+            this.employeeIDlabel.Size = new System.Drawing.Size(67, 13);
+            this.employeeIDlabel.TabIndex = 10;
+            this.employeeIDlabel.Text = "Employee ID";
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(634, 412);
@@ -716,6 +733,39 @@
             this.CompanyDetailsTab1.Size = new System.Drawing.Size(817, 563);
             this.CompanyDetailsTab1.TabIndex = 2;
             this.CompanyDetailsTab1.Text = "Company Details";
+            // 
+            // website_companyDetails_textBox
+            // 
+            this.website_companyDetails_textBox.Location = new System.Drawing.Point(123, 111);
+            this.website_companyDetails_textBox.Name = "website_companyDetails_textBox";
+            this.website_companyDetails_textBox.Size = new System.Drawing.Size(100, 20);
+            this.website_companyDetails_textBox.TabIndex = 13;
+            // 
+            // website_companyDetails_label
+            // 
+            this.website_companyDetails_label.AutoSize = true;
+            this.website_companyDetails_label.Location = new System.Drawing.Point(33, 114);
+            this.website_companyDetails_label.Name = "website_companyDetails_label";
+            this.website_companyDetails_label.Size = new System.Drawing.Size(48, 13);
+            this.website_companyDetails_label.TabIndex = 12;
+            this.website_companyDetails_label.Text = "WebSite";
+            // 
+            // employeeID_companyDetails_textBox
+            // 
+            this.employeeID_companyDetails_textBox.Location = new System.Drawing.Point(123, 137);
+            this.employeeID_companyDetails_textBox.Name = "employeeID_companyDetails_textBox";
+            this.employeeID_companyDetails_textBox.Size = new System.Drawing.Size(100, 20);
+            this.employeeID_companyDetails_textBox.TabIndex = 11;
+            this.employeeID_companyDetails_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            // 
+            // employeeID_companyDetails_label
+            // 
+            this.employeeID_companyDetails_label.AutoSize = true;
+            this.employeeID_companyDetails_label.Location = new System.Drawing.Point(33, 144);
+            this.employeeID_companyDetails_label.Name = "employeeID_companyDetails_label";
+            this.employeeID_companyDetails_label.Size = new System.Drawing.Size(67, 13);
+            this.employeeID_companyDetails_label.TabIndex = 10;
+            this.employeeID_companyDetails_label.Text = "Employee ID";
             // 
             // location_companyDetails_textBox
             // 
@@ -872,7 +922,7 @@
             // 
             // searchEmployeeIDtextBox
             // 
-            this.searchEmployeeIDtextBox.Location = new System.Drawing.Point(96, 7);
+            this.searchEmployeeIDtextBox.Location = new System.Drawing.Point(85, 7);
             this.searchEmployeeIDtextBox.Name = "searchEmployeeIDtextBox";
             this.searchEmployeeIDtextBox.Size = new System.Drawing.Size(100, 20);
             this.searchEmployeeIDtextBox.TabIndex = 1;
@@ -894,56 +944,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(821, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // employeeIDlabel
-            // 
-            this.employeeIDlabel.AutoSize = true;
-            this.employeeIDlabel.Location = new System.Drawing.Point(57, 200);
-            this.employeeIDlabel.Name = "employeeIDlabel";
-            this.employeeIDlabel.Size = new System.Drawing.Size(67, 13);
-            this.employeeIDlabel.TabIndex = 10;
-            this.employeeIDlabel.Text = "Employee ID";
-            // 
-            // employeeIDTextBox
-            // 
-            this.employeeIDTextBox.Location = new System.Drawing.Point(152, 197);
-            this.employeeIDTextBox.Name = "employeeIDTextBox";
-            this.employeeIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.employeeIDTextBox.TabIndex = 11;
-            this.employeeIDTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // employeeID_companyDetails_label
-            // 
-            this.employeeID_companyDetails_label.AutoSize = true;
-            this.employeeID_companyDetails_label.Location = new System.Drawing.Point(33, 144);
-            this.employeeID_companyDetails_label.Name = "employeeID_companyDetails_label";
-            this.employeeID_companyDetails_label.Size = new System.Drawing.Size(67, 13);
-            this.employeeID_companyDetails_label.TabIndex = 10;
-            this.employeeID_companyDetails_label.Text = "Employee ID";
-            // 
-            // employeeID_companyDetails_textBox
-            // 
-            this.employeeID_companyDetails_textBox.Location = new System.Drawing.Point(123, 137);
-            this.employeeID_companyDetails_textBox.Name = "employeeID_companyDetails_textBox";
-            this.employeeID_companyDetails_textBox.Size = new System.Drawing.Size(100, 20);
-            this.employeeID_companyDetails_textBox.TabIndex = 11;
-            this.employeeID_companyDetails_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
-            // 
-            // website_companyDetails_label
-            // 
-            this.website_companyDetails_label.AutoSize = true;
-            this.website_companyDetails_label.Location = new System.Drawing.Point(33, 114);
-            this.website_companyDetails_label.Name = "website_companyDetails_label";
-            this.website_companyDetails_label.Size = new System.Drawing.Size(48, 13);
-            this.website_companyDetails_label.TabIndex = 12;
-            this.website_companyDetails_label.Text = "WebSite";
-            // 
-            // website_companyDetails_textBox
-            // 
-            this.website_companyDetails_textBox.Location = new System.Drawing.Point(123, 111);
-            this.website_companyDetails_textBox.Name = "website_companyDetails_textBox";
-            this.website_companyDetails_textBox.Size = new System.Drawing.Size(100, 20);
-            this.website_companyDetails_textBox.TabIndex = 13;
             // 
             // PioneerEmployeeDB
             // 
