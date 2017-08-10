@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PioneerTech.Consultancy.Sys.Model;
+using PioneerTech.Consultancy.Sys.Model.Models;
 
 namespace PioneerTech.Consultancy.Sys
 {
@@ -132,47 +133,40 @@ namespace PioneerTech.Consultancy.Sys
 
         private void save_buttonClick(object sender, EventArgs e)
         {
-            string DataBase = databasetextbox.Text;
-            string ORM_Technology = ormtechnologytextbox.Text;
-            string ProgrammingLanguage = programminglanguagetextbox.Text;
-            string UserInterface = userinterfacetextbox.Text;
-            string Graduation = graduationtextbox.Text;
-            string Specialization = specializationtextbox.Text;
+            //string DataBase = databasetextbox.Text;
+            //string ORM_Technology = ormtechnologytextbox.Text;
+            //string ProgrammingLanguage = programminglanguagetextbox.Text;
+            //string UserInterface = userinterfacetextbox.Text;
+            //string Graduation = graduationtextbox.Text;
+            //string Specialization = specializationtextbox.Text;
 
-            string Course = coursetextbox.Text;
-            string Address2 = address2textbox.Text;
-            string Address1 = address1textbox.Text;
-            string FirstName = FirstNameTextBox.Text;
-            string Mobile = mobiletextbox.Text;
-            string EmailID = emailtextbox.Text;
-            string LastName = LastNameTextBox.Text;
-            string HomeCountry = HomeCountryTextBox.Text;
-            string CurrentCountry = CurrentCountrtyTextBox.Text;
-            string phone = phonetextbox.Text;
-            int ZipCode;
+            //string Course = coursetextbox.Text;
 
-            if (zipcodetextbox.Text.Equals(""))
-            {
-                ZipCode = 0;
-            }
-            else
-            {
-                ZipCode = Convert.ToInt32(zipcodetextbox.Text);
-            }
 
+            PersonalDetails personal_details = new PersonalDetails() { 
+             Address2 = address2textbox.Text,
+             Address1 = address1textbox.Text,
+             FirstName = FirstNameTextBox.Text,
+             Mobile = Convert.ToInt64(mobiletextbox.Text),
+             EmailID = emailtextbox.Text,
+             LastName = LastNameTextBox.Text,
+             HomeCountry = HomeCountryTextBox.Text,
+             CurrentCountry = CurrentCountrtyTextBox.Text,
+             Phone = Convert.ToInt64(phonetextbox.Text),
+             ZipCode = Convert.ToInt32(zipcodetextbox.Text) };
+
+         
             EmployeeDataAccessLayer employeedata = new EmployeeDataAccessLayer();
-            var result = employeedata.InjectPersonalDetails(FirstName, LastName, EmailID, Mobile, phone, Address1, Address2, ZipCode, HomeCountry, CurrentCountry);
+
+            var result = employeedata.InjectPersonalDetails(personal_details);
             if(result>0)
             {
-                MessageBox.Show("Personal Details Sucessfully Updated for {0} ",FirstName);
+                MessageBox.Show("Personal Details Sucessfully Updated for {0} ",personal_details.FirstName);
             }
             else
             {
-                MessageBox.Show("Personal Details Update Failed for {0}",FirstName);
+                MessageBox.Show("Personal Details Update Failed for {0}",personal_details.FirstName);
             }
-
-
-
 
         }
 
@@ -229,9 +223,7 @@ namespace PioneerTech.Consultancy.Sys
         {
 
         }
-
-
-
+        
         private void FirstNameTextBox_TextChanged_1(object sender, EventArgs e)
         {
 
@@ -269,8 +261,6 @@ namespace PioneerTech.Consultancy.Sys
             //}
         }
 
-
-
         private void button4_Click(object sender, EventArgs e)
         {
             //string UserInterFace = userinterfacetextbox.Text;
@@ -306,14 +296,19 @@ namespace PioneerTech.Consultancy.Sys
 
         private void button9_Click(object sender, EventArgs e)
         {
-            string employeeID = employeeIDTextBox.Text;
-            string projectName = projectNameTextBox.Text;
-            string location = LocationTextBox.Text;
-            string role = RoleTextBox.Text;
-            string clientName = ClientNameTextBox.Text;
+
+
+            ProjectDetails proj_details = new ProjectDetails()
+            {
+                EmployeeID = Convert.ToInt32(employeeIDTextBox.Text),
+                ProjectName = projectNameTextBox.Text,
+                Location = LocationTextBox.Text,
+                Role = RoleTextBox.Text,
+                ClientName = ClientNameTextBox.Text
+            };
 
             EmployeeDataAccessLayer projectDetailsDataInect = new EmployeeDataAccessLayer();
-            int result = projectDetailsDataInect.InjectProjectDetails(projectName, clientName, location, role, employeeID);
+            int result = projectDetailsDataInect.InjectProjectDetails(proj_details);
 
             if(result>0)
             {
@@ -352,13 +347,19 @@ namespace PioneerTech.Consultancy.Sys
 
         private void button11_Click(object sender, EventArgs e)
         {
-            string employeeName = employeeName_companyDetails_textBox.Text;
-            string employeeID = employeeID_companyDetails_textBox.Text;
-            string location = location_companyDetails_textBox.Text;
-            string contact = contact_companyDetails_textbox.Text;
-            string website = website_companyDetails_textBox.Text;
-            EmployeeDataAccessLayer projectdata = new EmployeeDataAccessLayer();
-            int  result = projectdata.InjectCompanyDetails(employeeName, employeeID, location, contact, website);
+
+
+            CompanyDetails comp_details = new CompanyDetails()
+            {
+                EmployeeName = employeeName_companyDetails_textBox.Text,
+                EmployeeID = Convert.ToInt32(employeeID_companyDetails_textBox.Text),
+                CompanyLocation = location_companyDetails_textBox.Text,
+                Contact = Convert.ToInt64(contact_companyDetails_textbox.Text),
+                CompanyWebsite = website_companyDetails_textBox.Text
+
+            };
+        EmployeeDataAccessLayer projectdata = new EmployeeDataAccessLayer();
+            int  result = projectdata.InjectCompanyDetails(comp_details);
             if (result>0)
             {
                 MessageBox.Show("The Company Details record has been sucessfully Updated");

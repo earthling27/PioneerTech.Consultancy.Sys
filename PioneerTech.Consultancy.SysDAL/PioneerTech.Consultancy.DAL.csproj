@@ -43,5 +43,11 @@
     <Compile Include="EmployeeDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PioneerTech.Consultancy.Sys.Model\PioneerTech.Consultancy.Sys.Model.csproj">
+      <Project>{f8c5aa24-f93e-4568-8a28-037bc2c71600}</Project>
+      <Name>PioneerTech.Consultancy.Sys.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

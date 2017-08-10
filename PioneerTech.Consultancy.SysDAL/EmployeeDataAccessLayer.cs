@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PioneerTech.Consultancy.Sys.Model;
+using PioneerTech.Consultancy.Sys.Model.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace PioneerTech.Consultancy.DAL
 {
     public class EmployeeDataAccessLayer
     {
-        public int InjectPersonalDetails(string FirstName, string LastName, string EmailID, string Mobile, string phone, string Address1, string Address2, int ZipCode, string HomeCountry, string CurrentCountry)
+        public int InjectPersonalDetails(PersonalDetails p_detail)
         {
             SqlConnection conn = new SqlConnection("Data Source=EARTHLING;" +
            "Initial Catalog=EmployeeDataBaseManagementSystem;" +
@@ -18,9 +20,9 @@ namespace PioneerTech.Consultancy.DAL
 
             conn.Open();
             SqlCommand command = new SqlCommand("INSERT INTO PersonalDetails VALUES(" +
-                       "'" + FirstName + "','" + LastName + "','" + EmailID + "'," +
-                        Mobile + "," + phone + ",'" + Address1 + "','" + Address2 +
-                       "','" + CurrentCountry + "','" + HomeCountry + "'," + ZipCode + ")", conn);
+                       "'" + p_detail.FirstName + "','" + p_detail.LastName + "','" + p_detail.EmailID + "'," +
+                        p_detail.Mobile + "," + p_detail.Phone + ",'" + p_detail.Address1 + "','" + p_detail.Address2 +
+                       "','" + p_detail.CurrentCountry + "','" + p_detail.HomeCountry + "'," + p_detail.ZipCode + ")", conn);
             int result = command.ExecuteNonQuery();
 
 
@@ -31,15 +33,15 @@ namespace PioneerTech.Consultancy.DAL
 
         }
 
-        public int InjectCompanyDetails(string employeeName, string employeeID, string location, string contact, string website)
+        public int InjectCompanyDetails(CompanyDetails comp_details)
         {
             SqlConnection conn = new SqlConnection("Data Source=EARTHLING;" +
              "Initial Catalog=EmployeeDataBaseManagementSystem;" +
              "Integrated Security=true");
             conn.Open();
             SqlCommand command = new SqlCommand("INSERT INTO [Company Details] VALUES(" +
-                       "'" + employeeName + "','" + contact + "','" + location + "','" +
-                        website + "'," + employeeID + ")", conn);
+                       "'" + comp_details.EmployeeName + "','" + comp_details.Contact + "','" + comp_details.CompanyLocation + "','" +
+                        comp_details.CompanyWebsite + "'," + comp_details.EmployeeID + ")", conn);
             
 
 
@@ -52,7 +54,7 @@ namespace PioneerTech.Consultancy.DAL
         }
 
 
-        public int InjectProjectDetails(string projectName, string clientName, string location, string role, string employeeID)
+        public int InjectProjectDetails(ProjectDetails proj_details)
         {
             SqlConnection conn = new SqlConnection("Data Source=EARTHLING;" +
                 "Initial Catalog=EmployeeDataBaseManagementSystem;" +
@@ -60,8 +62,8 @@ namespace PioneerTech.Consultancy.DAL
 
             conn.Open();
             SqlCommand command = new SqlCommand("INSERT INTO ProjectDetails VALUES(" +
-                       "'" + projectName + "','" + clientName + "','" + location + "','" +
-                        role + "'," + employeeID + ")", conn);
+                       "'" + proj_details.ProjectName + "','" + proj_details.ClientName + "','" + proj_details.Location + "','" +
+                        proj_details.Role + "'," + proj_details.EmployeeID + ")", conn);
 
             int result = command.ExecuteNonQuery();
 

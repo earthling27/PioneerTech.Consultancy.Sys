@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dashboard", "PioneerTech.Consultancy.Sys\dashboard.csproj", "{17AED07C-44CB-441D-BB51-19A23298A23A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech.Consultancy.Sys", "PioneerTech.Consultancy.Sys\PioneerTech.Consultancy.Sys.csproj", "{17AED07C-44CB-441D-BB51-19A23298A23A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login_Form", "Login_Form\Login_Form.csproj", "{1D5922DC-D0DC-4F4C-BE7A-B2B0852DB27D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech.Consultancy.DAL", "PioneerTech.Consultancy.SysDAL\PioneerTech.Consultancy.DAL.csproj", "{CA0761A5-0B9D-4BED-9ABD-F9966D6E3E71}"
 EndProject
 Project("{E729F059-12D4-455F-A2A4-FDA8DD25E08A}") = "PioneerProject", "PioneerProject\PioneerProject.isproj", "{E732EFB5-D853-454C-B8A9-22E9CD980DDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech.Consultancy.Sys.Model", "PioneerTech.Consultancy.Sys.Model\PioneerTech.Consultancy.Sys.Model.csproj", "{F8C5AA24-F93E-4568-8A28-037BC2C71600}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E732EFB5-D853-454C-B8A9-22E9CD980DDB}.Debug|Any CPU.Build.0 = Debug
 		{E732EFB5-D853-454C-B8A9-22E9CD980DDB}.Release|Any CPU.ActiveCfg = Release
 		{E732EFB5-D853-454C-B8A9-22E9CD980DDB}.Release|Any CPU.Build.0 = Release
+		{F8C5AA24-F93E-4568-8A28-037BC2C71600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C5AA24-F93E-4568-8A28-037BC2C71600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C5AA24-F93E-4568-8A28-037BC2C71600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C5AA24-F93E-4568-8A28-037BC2C71600}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

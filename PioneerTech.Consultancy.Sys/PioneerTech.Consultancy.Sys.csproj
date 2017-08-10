@@ -83,6 +83,10 @@
     <None Include="Resources\894f0362.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PioneerTech.Consultancy.Sys.Model\PioneerTech.Consultancy.Sys.Model.csproj">
+      <Project>{f8c5aa24-f93e-4568-8a28-037bc2c71600}</Project>
+      <Name>PioneerTech.Consultancy.Sys.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PioneerTech.Consultancy.SysDAL\PioneerTech.Consultancy.DAL.csproj">
       <Project>{CA0761A5-0B9D-4BED-9ABD-F9966D6E3E71}</Project>
       <Name>PioneerTech.Consultancy.DAL</Name>
